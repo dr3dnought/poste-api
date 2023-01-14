@@ -2,6 +2,7 @@ import { Module } from '@nestjs/common';
 import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { ConfigModule } from '@nestjs/config';
+import { UsersModule } from './users/users.module';
 import baseConfig from './ config/base.config';
 
 @Module({
@@ -11,6 +12,7 @@ import baseConfig from './ config/base.config';
       isGlobal: true,
       load: [baseConfig],
     }),
+    UsersModule,
   ],
   controllers: [AppController],
   providers: [AppService],
